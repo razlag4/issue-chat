@@ -482,6 +482,71 @@ button:hover {
     }
 }
 
+/* Планшеты и меньше — до 1024px */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    #h1, #h2, #h3, #h4, #h5 {
+        text-align: center;
+        margin: 1em auto;
+        font-size: 28px;
+    }
+
+    #p1, #p2, #p3 {
+        text-align: center;
+        margin: 0.5em auto 2em auto;
+        font-size: 18px;
+    }
+
+    #divblocks, #divblocks2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 5%;
+    }
+
+    .blocks, .blocks2 {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+
+    #batterfly {
+        width: 70vw;
+        top: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #laptop {
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+        margin-top: -8%;
+    }
+
+    #ava {
+        width: 70%;
+        top: -12%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+    }
+
+    /* убираем лого в футере */
+    #logo {
+        display: none;
+    }
+
+    #footer-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+}
+
 /* Маленькие телефоны — до 480px */
 @media (max-width: 480px) {
     #h1, #h2, #h3, #h4, #h5 {
@@ -521,6 +586,7 @@ button:hover {
     #footer-buttons {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
     }
 
     button {
@@ -563,3 +629,4 @@ button:hover {
         padding: 0.4em 0.6em;
     }
 }
+
