@@ -417,46 +417,147 @@ button:hover {
     transform: scale(1.1) rotate(3deg);
 }
 
+/* Планшеты и меньше — до 1024px */
 @media (max-width: 1024px) {
-    #h1, #h2 { font-size: 40px; margin: 1em 3%; }
-    #h3, #h4, #h5 { font-size: 32px; margin: 1em 3%; }
-    #p1, #p2, #p3 { font-size: 18px; margin: 0.5em 3%; }
-    #batterfly { width: 60vw; top: 12%; }
-    #laptop { width: 70%; margin-left: -5%; margin-top: -15%; }
-    #ava { width: 60%; top: -25%; left: 20%; height: auto; }
-    .blocks, .blocks2 { width: 220px; height: 220px; }
+    body {
+        font-size: 16px;
+    }
+
+    #h1, #h2, #h3, #h4, #h5 {
+        text-align: center;
+        margin: 1em auto;
+        font-size: 28px;
+    }
+
+    #p1, #p2, #p3 {
+        text-align: center;
+        margin: 0.5em auto 2em auto;
+        font-size: 18px;
+    }
+
+    #divblocks, #divblocks2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 5%;
+    }
+
+    .blocks, .blocks2 {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #batterfly {
+        width: 70vw;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #laptop {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        margin-top: -10%;
+    }
+
+    #ava {
+        width: 75%;
+        top: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+    }
+
+    #footer-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
 
-
-@media (max-width: 768px) {
-    #h1, #h2 { font-size: 28px; text-align: center; margin: 1em 5%; }
-    #h3, #h4, #h5 { font-size: 24px; text-align: center; margin: 1em 5%; }
-    #p1, #p2, #p3 { font-size: 16px; margin: 0.5em 5%; text-align: center; }
-    #batterfly { width: 80vw; top: 15%; }
-    #laptop { width: 90%; margin: 0 auto; display: block; margin-top: -10%; }
-    #ava { width: 80%; top: -20%; left: 10%; height: auto; }
-    .blocks, .blocks2 { width: 160px; height: 160px; margin-bottom: 20%; }
-    #footer-buttons { gap: 10px; flex-direction: column; }
-}
-
-
+/* Маленькие телефоны — до 480px */
 @media (max-width: 480px) {
-    #h1, #h2 { font-size: 22px; }
-    #h3, #h4, #h5 { font-size: 18px; }
-    #p1, #p2, #p3 { font-size: 14px; }
-    .blocks, .blocks2 { width: 140px; height: 140px; }
-    button { font-size: 16px; padding: 0.4em 0.6em; }
+    #h1, #h2, #h3, #h4, #h5 {
+        font-size: 22px;
+    }
+
+    #p1, #p2, #p3 {
+        font-size: 14px;
+        margin: 0.5em auto 1.5em auto;
+    }
+
+    #divblocks, #divblocks2 {
+        gap: 20px;
+    }
+
+    .blocks, .blocks2 {
+        width: 140px;
+        height: 140px;
+    }
+
+    #batterfly {
+        width: 85vw;
+        top: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #laptop {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: -5%;
+    }
+
+    #ava {
+        width: 80%;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #footer-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    button {
+        width: 80%;
+        margin: 0.5em auto;
+        font-size: 16px;
+    }
 }
 
-
+/* Очень маленькие телефоны — до 360px */
 @media (max-width: 360px) {
-    #h1, #h2 { font-size: 18px; }
-    #h3, #h4, #h5 { font-size: 16px; }
-    #p1, #p2, #p3 { font-size: 12px; }
-    #batterfly { width: 90vw; top: 18%; }
-    #laptop { width: 100%; margin: 0 auto; margin-top: -5%; }
-    #ava { width: 90%; top: -15%; left: 5%; height: auto; }
-    .blocks, .blocks2 { width: 120px; height: 120px; margin-bottom: 25%; }
-    button { font-size: 14px; padding: 0.3em 0.5em; }
-    #footer-buttons { gap: 8px; }
+    #h1, #h2, #h3, #h4, #h5 {
+        font-size: 18px;
+    }
+
+    #p1, #p2, #p3 {
+        font-size: 12px;
+    }
+
+    .blocks, .blocks2 {
+        width: 120px;
+        height: 120px;
+    }
+
+    #batterfly, #laptop, #ava {
+        width: 90%;
+        margin: 0 auto;
+        transform: none;
+        top: auto;
+        left: auto;
+    }
+
+    #footer-buttons {
+        gap: 6px;
+    }
+
+    button {
+        width: 90%;
+        font-size: 14px;
+        padding: 0.3em 0.5em;
+    }
 }
