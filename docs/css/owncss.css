@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     color: #ccc;
     position: relative;
+    padding-top: 15%;
+    padding-bottom: 100px;
 }
 
 body::before {
@@ -417,103 +419,74 @@ button:hover {
     transform: scale(1.1) rotate(3deg);
 }
 
+
+#h1, #h2, #h3, #h4, #h5,
+#p1, #p2, #p3 {
+    position: static;   /* отключаем relative+top */
+    margin: 20px auto;  /* отступы сверху и снизу */
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.4;
+}
+
 /* Планшеты и меньше — до 1024px */
 /* Планшеты и меньше — до 1024px */
 @media (max-width: 1024px) {
-    body {
-        font-size: 16px;
-        padding-top: 15%; /* отступ под фиксированный футер */
-    }
-
     #h1, #h2, #h3, #h4, #h5 {
-        text-align: center;
-        margin: 1em auto;
         font-size: 28px;
     }
 
     #p1, #p2, #p3 {
-        text-align: center;
-        margin: 0.5em auto 2em auto;
         font-size: 18px;
+    }
+
+    /* Скрываем ноут и логотип */
+    #laptop, #ava {
+        display: none !important;
+    }
+
+    #batterfly {
+        width: 60%;
+        margin: 20px auto;
+        display: block;
+        position: relative;
     }
 
     #divblocks, #divblocks2 {
         flex-direction: column;
         align-items: center;
         gap: 30px;
-        margin-top: 5%;
     }
 
     .blocks, .blocks2 {
         width: 220px;
         height: 220px;
-        margin-bottom: 20px;
-    }
-
-    #batterfly {
-        width: 65vw;
-        top: auto;
-        margin: 2em auto;
-        position: relative;
-    }
-
-    #laptop {
-        width: 80%;
-        margin: 2em auto;
-        display: block;
-    }
-
-    #ava {
-        width: 70%;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        height: auto;
     }
 
     #footer-buttons {
-        flex-direction: row;
-        gap: 20px;
         flex-wrap: wrap;
+        gap: 15px;
         justify-content: center;
     }
 }
 
-/* Маленькие телефоны — до 480px */
+/* Телефоны — до 480px */
 @media (max-width: 480px) {
-    body {
-        padding-top: 20%; /* больше отступ под футер */
-    }
-
     #h1, #h2, #h3, #h4, #h5 {
         font-size: 22px;
     }
 
     #p1, #p2, #p3 {
         font-size: 14px;
-        margin: 0.5em auto 1.5em auto;
+    }
+
+    #batterfly {
+        width: 75%;
     }
 
     .blocks, .blocks2 {
         width: 160px;
         height: 160px;
-    }
-
-    #batterfly {
-        width: 80vw;
-        margin: 1em auto;
-    }
-
-    #laptop {
-        width: 90%;
-        margin: 1em auto;
-    }
-
-    #ava {
-        width: 80%;
-        margin: 0 auto;
-        position: relative;
-        transform: none;
     }
 
     #footer-buttons {
@@ -538,20 +511,13 @@ button:hover {
         font-size: 12px;
     }
 
+    #batterfly {
+        width: 85%;
+    }
+
     .blocks, .blocks2 {
         width: 130px;
         height: 130px;
-    }
-
-    #batterfly, #laptop, #ava {
-        width: 90%;
-        margin: 1em auto;
-        position: relative;
-        transform: none;
-    }
-
-    #footer-buttons {
-        gap: 6px;
     }
 
     button {
