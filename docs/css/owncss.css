@@ -418,10 +418,12 @@ button:hover {
 }
 
 /* Планшеты и меньше — до 1024px */
-/* Планшеты и меньше — до 1024px */
 @media (max-width: 1024px) {
     body {
         font-size: 16px;
+        margin: 0 auto;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
     #h1, #h2, #h3, #h4, #h5 {
@@ -449,82 +451,27 @@ button:hover {
         margin-bottom: 20px;
     }
 
-    #batterfly {
-        width: 70vw;
-        top: 12%;
-        left: 50%;
-        transform: translateX(-50%);
+    /* ноутбук и бабочка */
+    #divlaptop {
+        position: relative;
+        display: inline-block;
+        width: 90%;
+        margin: 0 auto;
     }
 
     #laptop {
-        width: 85%;
-        margin: 0 auto;
         display: block;
-        margin-top: -8%;
-    }
-
-    #ava {
-        width: 70%;
-        top: -12%;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 100%;
         height: auto;
     }
 
-    #footer-logo {
-        display: none; /* убираем лого */
-    }
-
-    #footer-buttons {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
-}
-
-/* Планшеты и меньше — до 1024px */
-@media (max-width: 1024px) {
-    body {
-        font-size: 16px;
-    }
-
-    #h1, #h2, #h3, #h4, #h5 {
-        text-align: center;
-        margin: 1em auto;
-        font-size: 28px;
-    }
-
-    #p1, #p2, #p3 {
-        text-align: center;
-        margin: 0.5em auto 2em auto;
-        font-size: 18px;
-    }
-
-    #divblocks, #divblocks2 {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-top: 5%;
-    }
-
-    .blocks, .blocks2 {
-        width: 220px;
-        height: 220px;
-        margin-bottom: 20px;
-    }
-
     #batterfly {
-        width: 70vw;
-        top: 12%;
+        position: absolute;
+        top: 15%;
         left: 50%;
         transform: translateX(-50%);
-    }
-
-    #laptop {
-        width: 85%;
-        margin: 0 auto;
-        display: block;
-        margin-top: -8%;
+        width: 70%;
+        height: auto;
     }
 
     #ava {
@@ -544,6 +491,7 @@ button:hover {
         flex-direction: column;
         gap: 12px;
         align-items: center;
+        margin-bottom: 20px; /* чтобы текст не налезал */
     }
 }
 
@@ -564,23 +512,18 @@ button:hover {
     }
 
     #batterfly {
-        width: 85vw;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 80%;
+        top: 12%;
     }
 
     #laptop {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
-        margin-top: -5%;
     }
 
     #ava {
         width: 75%;
         top: -8%;
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     #footer-buttons {
@@ -629,4 +572,3 @@ button:hover {
         padding: 0.4em 0.6em;
     }
 }
-
