@@ -1,0 +1,26 @@
+#butterfly-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75vw;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#line {
+  stroke-dasharray: 10000;
+  stroke-dashoffset: 10000;
+  stroke-linejoin: round;
+}
+
+#batterfly {
+  position: absolute;
+  width: 100px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: transform 0.1s linear;
+}
