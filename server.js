@@ -8,10 +8,10 @@ const PORT = 3000;
 const EVENTS_FILE = path.join(__dirname, 'iventbot', 'ivents.json');
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'ownbok.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'ownbok.html'));
 });
 
 function loadEvents() {
