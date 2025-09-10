@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     color: #ccc;
     position: relative;
-    padding-top: 15%;
+    padding-top: 0%;
     padding-bottom: 100px;
 }
 
@@ -41,7 +41,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     padding: 0 2%;
-    position: fixed;
+    position: relative;
     top: 0;        
     left: 0;        
     z-index: 999; 
@@ -146,7 +146,7 @@ button {
     overflow: hidden;
     transition: all 0.2s;
     margin-right: 6%;
-    margin-top: 0.7%;
+    margin-top: 2.4%;
     cursor: pointer;
 }
 
@@ -188,6 +188,8 @@ button:hover {
 }
 
 #logo {
+    position: relative;
+    top: -20px;
     width: 300px;
     filter: drop-shadow(0 0 4px #000000cc)
             drop-shadow(0 0 7px #000000af)
@@ -206,13 +208,13 @@ button:hover {
 }
 
 #p1 {
-    position: relative;
     font-family: 'Nata Sans', sans-serif;
-    margin-left: 12.5%;
-    margin-top: 0.9%;
-    margin-bottom: 40vh;
+    margin: 40px auto;   
     font-size: 25px;
+    max-width: 80%;      
+    line-height: 1.5;  
 }
+
 
 #p2 {
     position: relative;
@@ -225,13 +227,12 @@ button:hover {
 }
 
 #h2 {
-    position: relative;
     font-family: 'Nata Sans', sans-serif;
-    margin-right: 12.5%;
-    margin-top: 0.9%;
+    margin: 80px 12.5% 20px auto; 
     font-size: 55.5px;
     text-align: right;
 }
+
 
 #h3 {
     position: relative;
@@ -253,10 +254,9 @@ button:hover {
 }
 
 #batterfly {
-    position: absolute;
-    right: 0px;
-    top: 10%;
-    width: 75vw;
+    display: block;                /* блочный элемент */
+    margin: 40px auto;             /* авто-отступы = центр по горизонтали */
+    width: 85vw;
     filter: drop-shadow(0 0 7px #0040ff69)
             drop-shadow(0 0 12px #0040ff6e)
             drop-shadow(0 0 17px #3388ff6b)
@@ -266,6 +266,7 @@ button:hover {
     transform-origin: center;
     z-index: -1;
 }
+
 
 @keyframes butterflyPulse {
     0% { transform: scale(1); opacity: 1; }
@@ -422,8 +423,8 @@ button:hover {
 
 #h1, #h2, #h3, #h4, #h5,
 #p1, #p2, #p3 {
-    position: static;   /* отключаем relative+top */
-    margin: 20px auto;  /* отступы сверху и снизу */
+    position: static;
+    margin: 20px auto;
     text-align: center;
     max-width: 90%;
     line-height: 1.4;
