@@ -10,7 +10,7 @@ import threading
 
 load_dotenv()
 
-AAPI_ID = int(os.getenv("API_ID_2"))
+API_ID = int(os.getenv("API_ID_2"))
 API_HASH = os.getenv("API_HASH_2")
 BOT_TOKEN = os.getenv("BOT_TOKEN_2")
 CHAT_USERNAME = os.getenv("CHAT_USERNAME_2")
