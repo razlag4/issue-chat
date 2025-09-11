@@ -466,70 +466,234 @@ button:hover {
 }
 
 /* Смартфоны и небольшие планшеты — до 768px */
+/* ---------- Планшеты горизонтально (до 1024px) ---------- */
+@media (max-width: 1024px) {
+  #batterfly {
+    width: 65%;
+    margin: 20px auto;
+    display: block;
+    position: relative;
+  }
+
+  #footer-buttons {
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    transform: none;
+    left: 0;
+    margin-top: 10px;
+  }
+
+  .blocks, .blocks2 {
+    width: 220px;
+    height: 220px;
+  }
+
+  #h1, #h2, #h3, #h4, #h5,
+  #p1, #p2, #p3 {
+    font-size: 90%;
+    margin: 15px auto;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 0.7em 1em;
+    position: relative;
+    margin: 15px auto;
+    display: block;
+  }
+}
+
+/* ---------- Большие телефоны и маленькие планшеты (до 912px) ---------- */
+@media (max-width: 912px) {
+  #batterfly {
+    width: 70%;
+  }
+
+  .blocks, .blocks2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  #footer-buttons {
+    gap: 20px;
+    flex-direction: row;
+  }
+
+  button {
+    font-size: 16px;
+    width: 75%;
+  }
+}
+
+/* ---------- Планшеты вертикально / iPad mini (до 820px) ---------- */
+@media (max-width: 820px) {
+  #batterfly {
+    width: 75%;
+  }
+
+  .blocks, .blocks2 {
+    width: 190px;
+    height: 190px;
+  }
+
+  #footer-buttons {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  button {
+    width: 80%;
+    font-size: 15px;
+    margin: 12px auto;
+  }
+}
+
+/* ---------- Смартфоны в горизонтали (до 768px) ---------- */
 @media (max-width: 768px) {
-    #batterfly {
-        width: 75%;
-    }
+  #batterfly {
+    width: 75%;
+  }
 
-    .blocks, .blocks2 {
-        width: 180px;
-        height: 180px;
-    }
+  #divblocks, #divblocks2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
 
-    button {
-        width: 85%;
-        margin: 0.7em auto;
-        font-size: 15px;
-        padding: 0.6em 1em;
-    }
+  .blocks, .blocks2 {
+    width: 180px;
+    height: 180px;
+  }
+
+  #footer-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  button {
+    width: 85%;
+    margin: 0.7em auto;
+    font-size: 15px;
+    padding: 0.6em 1em;
+  }
 }
 
-/* Телефоны — до 480px (например iPhone 14) */
+/* ---------- Новые смартфоны (iPhone 14 Pro, Galaxy S22) до 600px ---------- */
+@media (max-width: 600px) {
+  #batterfly {
+    width: 80%;
+  }
+
+  .blocks, .blocks2 {
+    width: 165px;
+    height: 165px;
+  }
+
+  #footer-buttons {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  button {
+    width: 88%;
+    font-size: 15px;
+    padding: 0.5em 0.9em;
+  }
+
+  #h1, #h2, #h3 {
+    font-size: 38px;
+  }
+
+  #p1, #p2, #p3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+/* ---------- Телефоны стандарт (до 480px) ---------- */
 @media (max-width: 480px) {
-    #batterfly {
-        width: 85%;
-    }
+  #batterfly {
+    width: 85%;
+  }
 
-    /* ДВА БЛОКА В РЯД */
-    #divblocks, #divblocks2 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        justify-items: center;
-    }
+  #divblocks, #divblocks2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    justify-items: center;
+  }
 
-    .blocks, .blocks2 {
-        width: 150px;
-        height: 150px;
-    }
+  .blocks, .blocks2 {
+    width: 150px;
+    height: 150px;
+  }
 
-    #footer-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
+  #footer-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    button {
-        width: 90%;
-        font-size: 14px;
-        padding: 0.5em 0.8em;
-    }
+  button {
+    width: 90%;
+    font-size: 14px;
+    padding: 0.5em 0.8em;
+  }
 }
 
-/* Очень маленькие телефоны — до 360px */
+/* ---------- Маленькие телефоны (до 400px) ---------- */
+@media (max-width: 400px) {
+  .blocks, .blocks2 {
+    width: 140px;
+    height: 140px;
+  }
+
+  #footer-buttons {
+    gap: 12px;
+  }
+
+  button {
+    width: 95%;
+    font-size: 13.5px;
+  }
+
+  #h1, #h2, #h3 {
+    font-size: 32px;
+  }
+
+  #p1, #p2, #p3 {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Очень маленькие (до 360px, старые андроиды) ---------- */
 @media (max-width: 360px) {
-    /* возвращаем блоки в одну колонку */
-    #divblocks, #divblocks2 {
-        grid-template-columns: 1fr;
-    }
+  #divblocks, #divblocks2 {
+    grid-template-columns: 1fr;
+  }
 
-    .blocks, .blocks2 {
-        width: 130px;
-        height: 130px;
-    }
+  .blocks, .blocks2 {
+    width: 130px;
+    height: 130px;
+  }
 
-    button {
-        width: 100%;
-        font-size: 13px;
-        padding: 0.4em 0.7em;
-    }
+  #footer-buttons {
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 13px;
+    padding: 0.4em 0.7em;
+  }
+
+  #h1, #h2, #h3 {
+    font-size: 28px;
+  }
+
+  #p1, #p2, #p3 {
+    font-size: 15px;
+  }
 }
