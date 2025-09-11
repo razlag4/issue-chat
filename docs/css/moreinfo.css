@@ -438,38 +438,30 @@ main {
 
 
 
-/* адаптив */
-@media (max-width: 768px) {
-  .event-btn {
-    width: 90%;
-    font-size: 1rem;
-    border-radius: 20px;
-  }
-}
-
-
-
-
-@keyframes flamesAnim {
-    0% { transform: translate(0,0) scale(1); }
-    25% { transform: translate(5%, -5%) scale(1.05); }
-    50% { transform: translate(-5%, 5%) scale(1.1); }
-    75% { transform: translate(5%, 5%) scale(1.05); }
-    100% { transform: translate(0,0) scale(1); }
-}
-
-
-
+/* Для экранов до 1024px */
 @media (max-width: 1024px) {
     #h1, #h2 { margin: 1em 3%; }
     #p1, #p2, #p3 { margin: 0.5em 3%; font-size: 1rem; }
+
+    /* скрываем кнопку и логотип */
+    #logo, button {
+        display: none !important;
+    }
+
+    #footer-buttons {
+        gap: 10px;
+        flex-direction: column;
+        position: static;
+        transform: none;
+    }
+
     #batterfly { width: 60vw; top: 12%; }
     #laptop { width: 70%; margin-left: -5%; margin-top: -15%; }
     #ava { width: 60%; top: -25%; left: 20%; height: auto; }
     .blocks, .blocks2 { width: 220px; height: 220px; }
 }
 
-
+/* Для экранов до 768px */
 @media (max-width: 768px) {
     #div1 { padding: 2.5em 3em; }
     #h1, #h2 { text-align: center; }
@@ -478,20 +470,18 @@ main {
     #laptop { width: 90%; margin: 0 auto; display: block; margin-top: -10%; }
     #ava { width: 80%; top: -20%; left: 10%; height: auto; }
     .blocks, .blocks2 { width: 160px; height: 160px; margin-bottom: 20%; }
+
     #footer-buttons { gap: 10px; flex-direction: column; position: static; transform: none; }
-    button { margin: 0 auto; display: block; position: static; }
-    #logo { width: 200px; margin: 0 auto 0.5em; display: block; }
 }
 
-
+/* Для экранов до 480px */
 @media (max-width: 480px) {
     #div1 { padding: 2em 1.5em; }
     .blocks, .blocks2 { width: 140px; height: 140px; margin-bottom: 20%; }
-    button { font-size: 0.95em; padding: 0.5em 0.8em; }
     #footer-buttons { gap: 8px; flex-direction: column; }
 }
 
-
+/* Для экранов до 360px */
 @media (max-width: 360px) {
     #div1 { padding: 1.5em 1em; }
     #h1 { font-size: 1.5rem; }
@@ -501,7 +491,5 @@ main {
     #laptop { width: 100%; margin: 0 auto; margin-top: -5%; }
     #ava { width: 90%; top: -15%; left: 5%; height: auto; }
     .blocks, .blocks2 { width: 120px; height: 120px; margin-bottom: 25%; }
-    button { font-size: 0.85em; padding: 0.4em 0.6em; }
     #footer-buttons { gap: 6px; }
-    #logo { width: 160px; }
 }

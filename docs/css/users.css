@@ -308,7 +308,12 @@ button:hover {
 
 
 
+/* Для экранов до 1024px */
 @media (max-width: 1024px) {
+  #logo, button {
+    display: none !important;
+  }
+
   #footer {
     flex-direction: column;
     height: auto;
@@ -330,55 +335,6 @@ button:hover {
     font-size: 16px;
   }
 
-  .input {
-    width: 70%;
-  }
-}
-
-
-@media (max-width: 600px) {
-  #footer {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  #footer-buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .footer-btn {
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    padding: 0.4em 0.8em;
-  }
-
-  #chat-button-wrapper {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .chat-button {
-    font-size: 14px;
-    padding: 0.5em 1em;
-  }
-
-  .input {
-    width: 90%;
-    font-size: 0.9rem;
-  }
-
-  #logo {
-    width: 200px;
-    margin-bottom: 10px;
-  }
-}
-
-
-@media (max-width: 1024px) {
   #users {
     width: 85vw;
     height: 80vh;
@@ -394,28 +350,9 @@ button:hover {
     width: 80%;
     font-size: 0.95rem;
   }
-
-  #footer-buttons {
-    gap: 15px;
-  }
-
-  .footer-btn {
-    font-size: 15px;
-    padding: 0.5em 1em;
-  }
-
-  #logo {
-    width: 250px;
-  }
-
-  button {
-    font-size: 22px;
-    margin-right: 5%;
-    margin-top: 0.5%;
-  }
 }
 
-
+/* Для экранов до 768px */
 @media (max-width: 768px) {
   #users {
     width: 90vw;
@@ -443,18 +380,9 @@ button:hover {
     font-size: 14px;
     padding: 0.4em 0.8em;
   }
-
-  #logo {
-    width: 200px;
-    margin-bottom: 10px;
-  }
-
-  button {
-    font-size: 20px;
-  }
 }
 
-
+/* Для экранов до 480px */
 @media (max-width: 480px) {
   #users {
     width: 95vw;
@@ -476,17 +404,9 @@ button:hover {
     font-size: 13px;
     padding: 0.35em 0.6em;
   }
-
-  #logo {
-    width: 180px;
-  }
-
-  button {
-    font-size: 18px;
-  }
 }
 
-
+/* Для экранов до 360px */
 @media (max-width: 360px) {
   #users {
     width: 98vw;
@@ -507,13 +427,5 @@ button:hover {
   .footer-btn {
     font-size: 12px;
     padding: 0.3em 0.5em;
-  }
-
-  #logo {
-    width: 150px;
-  }
-
-  button {
-    font-size: 16px;
   }
 }
