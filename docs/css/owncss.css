@@ -169,7 +169,7 @@ button:hover svg {
 }
 
 button:hover span {
-    transform: translateX(6.7em);
+    transform: translateX(14.7em);
 }
 
 button:active {
