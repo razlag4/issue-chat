@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <!-- Футер сверху -->
   <footer id="footer" data-aos="fade-down">
     <div id="footer-buttons" data-aos="fade-down">
       <a href="index.html" class="footer-btn">Описание группы</a>
@@ -34,12 +35,14 @@
   </footer>
 
   <main id="main-content" data-aos="fade-down">
+    <!-- Поиск сверху, отдельно -->
+    <div id="search-container">
+      <input id="searchInput" class="input" placeholder="Введите ID или username..." type="text" />
+    </div>
+
+    <!-- Список пользователей -->
     <div id="users">
-      <!-- Поиск внутри блока -->
-      <div id="search-container">
-        <input id="searchInput" class="input" placeholder="Введите ID или username..." type="text" />
-      </div>
-      <!-- Список пользователей появится ниже через JS -->
+      <!-- Здесь JS подгрузит пользователей -->
     </div>
   </main>
 
