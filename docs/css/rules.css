@@ -326,60 +326,65 @@ p:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Для экранов до 1200px */
-@media (max-width: 1200px) {
-    main { margin: 12% 3% 5% 3%; padding: 1.5rem; }
-    #div1, #div2 { padding: 2rem 2.5rem; }
-    #footer-buttons { gap: 40px; }
+/* Скрываем логотип и кнопку на экранах до 1054px */
+@media (max-width: 1054px) {
+  #logo,
+  button {
+    display: none !important;
+  }
+}
+
+/* Для экранов до 1024px */
+@media (max-width: 1024px) {
+    main { margin: 10% 4% 5% 4%; padding: 2.5rem; }
+    #div1, #div2 { padding: 3rem 3.5rem; }
+    h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+    h2 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+    p { font-size: 1.4rem; }
+    .section-title { font-size: 1.3rem; }
+    #footer-buttons { gap: 45px; }
 }
 
 /* Для экранов до 768px */
 @media (max-width: 768px) {
-    main { margin: 14% 3% 5% 3%; padding: 1.5rem; }
-    #div1, #div2 { padding: 2rem 2.5rem; }
-    h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
-    h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
-    p { font-size: clamp(1rem, 3.5vw, 1.2rem); }
-    .section-title { font-size: clamp(1rem, 3.5vw, 1.3rem); }
+    main { margin: 12% 3% 5% 3%; padding: 2.5rem; }
+    #div1, #div2 { padding: 3rem; }
+    h1 { font-size: clamp(2.8rem, 10vw, 4rem); }
+    h2 { font-size: clamp(2rem, 7vw, 2.6rem); }
+    p { font-size: 1.5rem; }
+    .section-title { font-size: 1.4rem; }
 
-    /* Центрирование и скрытие логотипа и кнопки */
     #footer-buttons {
-        gap: 30px;
+        gap: 40px;
         flex-direction: column;
         position: static;
         transform: none;
         text-align: center;
     }
-
-    button, #logo {
-        display: none !important; /* полностью скрываем */
-    }
 }
 
 /* Для экранов до 480px */
 @media (max-width: 480px) {
-    main { margin: 16% 2% 5% 2%; padding: 1rem; }
-    #div1, #div2 { padding: 2rem 2rem; }
+    main { margin: 14% 2% 5% 2%; padding: 2rem; }
+    #div1, #div2 { padding: 2.5rem; }
 
-    h1 { font-size: clamp(1.7rem, 9vw, 2.8rem); }
-    h2 { font-size: clamp(1.4rem, 6vw, 1.9rem); }
-    p { font-size: clamp(1rem, 4vw, 1.2rem); }
-    .section-title { font-size: clamp(1rem, 4vw, 1.2rem); }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    p { font-size: 1.6rem; }
+    .section-title { font-size: 1.5rem; }
 
-    .blocks, .blocks2 { width: 180px; height: 180px; margin-bottom: 15%; }
+    .blocks, .blocks2 { width: 230px; height: 230px; margin-bottom: 18%; }
 }
 
 /* Для экранов до 360px */
 @media (max-width: 360px) {
-    main { margin: 18% 2% 5% 2%; padding: 0.8rem; }
-    #div1, #div2 { padding: 1.5rem 2rem; }
+    main { margin: 16% 2% 5% 2%; padding: 1.8rem; }
+    #div1, #div2 { padding: 2rem; }
 
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 1.3rem; }
-    p { font-size: 1rem; }
+    h1 { font-size: 2.6rem; }
+    h2 { font-size: 1.9rem; }
+    p { font-size: 1.4rem; }
+    .section-title { font-size: 1.3rem; }
 
-    .blocks, .blocks2 { width: 150px; height: 150px; margin-bottom: 12%; }
-
-    /* Логотип и кнопка полностью скрыты */
-    #logo, button { display: none !important; }
+    .blocks, .blocks2 { width: 200px; height: 200px; margin-bottom: 15%; }
 }
