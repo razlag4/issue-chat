@@ -10,10 +10,11 @@ import threading
 
 load_dotenv()
 
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-YOUR_TELEGRAM_ID = int(os.getenv("YOUR_TELEGRAM_ID"))
+AAPI_ID = int(os.getenv("API_ID_2"))
+API_HASH = os.getenv("API_HASH_2")
+BOT_TOKEN = os.getenv("BOT_TOKEN_2")
+CHAT_USERNAME = os.getenv("CHAT_USERNAME_2")
+YOUR_TELEGRAM_ID = int(os.getenv("YOUR_TELEGRAM_ID_2"))
 
 ADMINS = [YOUR_TELEGRAM_ID, 2123680656]
 
