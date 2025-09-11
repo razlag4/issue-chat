@@ -35,7 +35,7 @@ body::before {
 #footer {
     height: 12%;
     width: 100%;
-    background-color: #b3b3b300;
+    background-color: transparent;
     color: white;
     display: flex;
     align-items: center;

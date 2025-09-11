@@ -3,7 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 
 const EVENTS_FILE = path.join(__dirname, 'iventbot', 'ivents.json');
 
@@ -44,4 +45,5 @@ app.post('/delete-event', (req, res) => {
     res.json({ success: true });
 });
 
-app.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+

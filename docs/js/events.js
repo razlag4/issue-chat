@@ -1,6 +1,6 @@
 async function fetchEvents() {
   try {
-    const response = await fetch(`/events?v=${Date.now()}`);
+    const response = await fetch(`https://issue-chat.onrender.com/events?v=${Date.now()}`);
     if (!response.ok) throw new Error();
     return await response.json();
   } catch {

@@ -4,19 +4,21 @@ import asyncio
 from dotenv import load_dotenv
 from telethon import TelegramClient, events
 from datetime import datetime, timedelta
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import threading
 
-load_dotenv(r"C:\Users\Serge\OneDrive\Рабочий стол\прокты\issue chat\issue_server\iventbot\sectert.env")
+load_dotenv()
 
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMINS = [int(os.getenv("YOUR_TELEGRAM_ID")), 2123680656]
+YOUR_TELEGRAM_ID = int(os.getenv("YOUR_TELEGRAM_ID"))
 
+ADMINS = [YOUR_TELEGRAM_ID, 2123680656]
 
-BASE_DIR = r"C:\Users\Serge\OneDrive\Рабочий стол\прокты\issue chat\issue_server\iventbot"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 EVENTS_FILE = os.path.join(BASE_DIR, "ivents.json")
-
-
 if not os.path.exists(EVENTS_FILE):
     with open(EVENTS_FILE, "w", encoding="utf-8") as f:
         json.dump([], f, ensure_ascii=False, indent=2)
@@ -57,8 +59,7 @@ async def add_handler(event):
             return
         name = data[0].strip()
         link = data[1].strip()
-        duration_str = data[2].strip()
-        days, hours, minutes = map(int, duration_str.split(":"))
+        days, hours, minutes = map(int, data[2].strip().split(":"))
         end_time = datetime.now() + timedelta(days=days, hours=hours, minutes=minutes)
         end_time_str = end_time.isoformat()
         events_list = load_events()
@@ -105,11 +106,32 @@ async def delete_handler(event):
     save_events(events_list)
     await event.respond(f"🗑️ Ивент <b>{removed['name']}</b> удален.", parse_mode="html")
 
-async def main():
+async def start_bot():
     await client.start(bot_token=BOT_TOKEN)
     me = await client.get_me()
     print(f"✅ Бот запущен: @{me.username} (id: {me.id})")
     await client.run_until_disconnected()
 
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/events")
+def get_events():
+    return jsonify(load_events())
+
+@app.route("/delete-event", methods=["POST"])
+def delete_event():
+    data = request.get_json()
+    name = data.get("name")
+    events_list = load_events()
+    events_list = [ev for ev in events_list if ev.get("name") != name]
+    save_events(events_list)
+    return jsonify({"status": "ok"})
+
+def run_flask():
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    threading.Thread(target=run_flask).start()
+    asyncio.run(start_bot())
