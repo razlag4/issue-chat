@@ -440,56 +440,55 @@ main {
 
 /* Для экранов до 1024px */
 @media (max-width: 1024px) {
-    #h1, #h2 { margin: 1em 3%; }
-    #p1, #p2, #p3 { margin: 0.5em 3%; font-size: 1rem; }
+    #h1 { font-size: clamp(2rem, 6vw, 3rem); }
+    #h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+    #p1, #p2, #p3 { font-size: 1.1rem; }
 
-    /* скрываем кнопку и логотип */
-    #logo, button {
-        display: none !important;
-    }
+    #div1 { padding: 3.5em 4.5em; }
 
-    #footer-buttons {
-        gap: 10px;
-        flex-direction: column;
-        position: static;
-        transform: none;
-    }
+    #logo, button { display: none !important; }
 
-    #batterfly { width: 60vw; top: 12%; }
-    #laptop { width: 70%; margin-left: -5%; margin-top: -15%; }
-    #ava { width: 60%; top: -25%; left: 20%; height: auto; }
-    .blocks, .blocks2 { width: 220px; height: 220px; }
+    #batterfly { width: 70vw; top: 10%; }
+    #laptop { width: 80%; margin-left: -5%; margin-top: -12%; }
+    #ava { width: 70%; top: -20%; left: 15%; height: auto; }
+    .blocks, .blocks2 { width: 250px; height: 250px; }
 }
 
 /* Для экранов до 768px */
 @media (max-width: 768px) {
-    #div1 { padding: 2.5em 3em; }
-    #h1, #h2 { text-align: center; }
-    #p1, #p2, #p3 { text-align: center; }
-    #batterfly { width: 80vw; top: 15%; }
-    #laptop { width: 90%; margin: 0 auto; display: block; margin-top: -10%; }
-    #ava { width: 80%; top: -20%; left: 10%; height: auto; }
-    .blocks, .blocks2 { width: 160px; height: 160px; margin-bottom: 20%; }
+    #div1 { padding: 3em 3.5em; }
+    #h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
+    #h2 { font-size: clamp(1.6rem, 5vw, 2rem); }
+    #p1, #p2, #p3 { font-size: 1.15rem; text-align: center; }
 
-    #footer-buttons { gap: 10px; flex-direction: column; position: static; transform: none; }
+    #batterfly { width: 85vw; top: 12%; }
+    #laptop { width: 95%; margin: 0 auto; margin-top: -8%; display: block; }
+    #ava { width: 85%; top: -18%; left: 10%; height: auto; }
+    .blocks, .blocks2 { width: 200px; height: 200px; margin-bottom: 15%; }
 }
 
 /* Для экранов до 480px */
 @media (max-width: 480px) {
-    #div1 { padding: 2em 1.5em; }
-    .blocks, .blocks2 { width: 140px; height: 140px; margin-bottom: 20%; }
-    #footer-buttons { gap: 8px; flex-direction: column; }
+    #div1 { padding: 2.5em 2em; }
+    #h1 { font-size: 2rem; }
+    #h2 { font-size: 1.5rem; }
+    #p1, #p2, #p3 { font-size: 1.1rem; }
+
+    #batterfly { width: 90vw; top: 14%; }
+    #laptop { width: 100%; margin: 0 auto; margin-top: -5%; }
+    #ava { width: 90%; top: -15%; left: 5%; height: auto; }
+    .blocks, .blocks2 { width: 180px; height: 180px; margin-bottom: 15%; }
 }
 
 /* Для экранов до 360px */
 @media (max-width: 360px) {
-    #div1 { padding: 1.5em 1em; }
-    #h1 { font-size: 1.5rem; }
-    #h2 { font-size: 1.2rem; }
-    #p1, #p2, #p3 { font-size: 0.9rem; }
-    #batterfly { width: 90vw; top: 18%; }
-    #laptop { width: 100%; margin: 0 auto; margin-top: -5%; }
-    #ava { width: 90%; top: -15%; left: 5%; height: auto; }
-    .blocks, .blocks2 { width: 120px; height: 120px; margin-bottom: 25%; }
-    #footer-buttons { gap: 6px; }
+    #div1 { padding: 2em 1.5em; }
+    #h1 { font-size: 1.8rem; }
+    #h2 { font-size: 1.3rem; }
+    #p1, #p2, #p3 { font-size: 1rem; }
+
+    #batterfly { width: 95vw; top: 16%; }
+    #laptop { width: 100%; margin: 0 auto; margin-top: -3%; }
+    #ava { width: 95%; top: -12%; left: 3%; height: auto; }
+    .blocks, .blocks2 { width: 160px; height: 160px; margin-bottom: 12%; }
 }

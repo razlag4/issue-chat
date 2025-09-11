@@ -326,56 +326,60 @@ p:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Медиазапросы для адаптации под устройства */
+/* Для экранов до 1200px */
 @media (max-width: 1200px) {
     main { margin: 12% 3% 5% 3%; padding: 1.5rem; }
-    #div1, #div2 { padding: 1.5rem 2rem; }
-    #footer-buttons { gap: 35px; }
+    #div1, #div2 { padding: 2rem 2.5rem; }
+    #footer-buttons { gap: 40px; }
 }
 
+/* Для экранов до 768px */
 @media (max-width: 768px) {
-    main { margin: 14% 2% 5% 2%; padding: 1rem; }
-    #div1, #div2 { padding: 1rem 1.5rem; }
-    h1 { font-size: clamp(1.3rem, 8vw, 2.5rem); }
-    h2 { font-size: clamp(1rem, 5vw, 1.5rem); }
-    p { font-size: clamp(0.8rem, 3vw, 0.95rem); }
-    .section-title { font-size: clamp(0.85rem, 3vw, 1rem); }
+    main { margin: 14% 3% 5% 3%; padding: 1.5rem; }
+    #div1, #div2 { padding: 2rem 2.5rem; }
+    h1 { font-size: clamp(1.8rem, 8vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
+    p { font-size: clamp(1rem, 3.5vw, 1.2rem); }
+    .section-title { font-size: clamp(1rem, 3.5vw, 1.3rem); }
 
-    /* Центрирование кнопки и логотипа */
+    /* Центрирование и скрытие логотипа и кнопки */
     #footer-buttons {
-        gap: 25px;
+        gap: 30px;
         flex-direction: column;
         position: static;
         transform: none;
-        margin-bottom: 0.5em;
         text-align: center;
     }
 
-    button {
-        margin: 0.5em auto 0 auto;
-        display: block;
-        position: static;
-    }
-
-    #logo {
-        width: 200px;
-        margin: 0 auto 0.5em auto;
-        display: block;
+    button, #logo {
+        display: none !important; /* полностью скрываем */
     }
 }
 
+/* Для экранов до 480px */
 @media (max-width: 480px) {
-    main { margin: 16% 2% 5% 2%; padding: 0.8rem; }
-    #div1, #div2 { padding: 0.8rem 1rem; }
+    main { margin: 16% 2% 5% 2%; padding: 1rem; }
+    #div1, #div2 { padding: 2rem 2rem; }
 
-    /* Логотип и кнопка ещё меньше */
-    #logo { width: 160px; }
-    button { font-size: 0.9em; padding: 0.5em 0.8em; }
+    h1 { font-size: clamp(1.7rem, 9vw, 2.8rem); }
+    h2 { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+    p { font-size: clamp(1rem, 4vw, 1.2rem); }
+    .section-title { font-size: clamp(1rem, 4vw, 1.2rem); }
+
+    .blocks, .blocks2 { width: 180px; height: 180px; margin-bottom: 15%; }
 }
 
+/* Для экранов до 360px */
 @media (max-width: 360px) {
-    #logo { width: 140px; }
-    button { font-size: 0.8em; padding: 0.4em 0.6em; }
-    #div1, #div2 { padding: 0.6rem 0.8rem; }
-}
+    main { margin: 18% 2% 5% 2%; padding: 0.8rem; }
+    #div1, #div2 { padding: 1.5rem 2rem; }
 
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.3rem; }
+    p { font-size: 1rem; }
+
+    .blocks, .blocks2 { width: 150px; height: 150px; margin-bottom: 12%; }
+
+    /* Логотип и кнопка полностью скрыты */
+    #logo, button { display: none !important; }
+}
