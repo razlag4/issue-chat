@@ -501,7 +501,9 @@ button:hover {
   #batterfly {width: 68%;}
   .blocks,.blocks2 {width: 220px; height: 220px;}
   #footer-buttons {gap: 12px;}
-  button {display: none;}
+  footer button {
+    display: none !important;
+  }
 }
 
 @media (max-width: 820px) {
