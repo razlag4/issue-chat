@@ -459,6 +459,14 @@ button:hover {
 @media (max-width: 1024px) {
   #laptop, #ava, #logo {display: none !important;}
 
+ #divblocks, #divblocks2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    justify-items: center;
+    margin-top: 50px;
+  }
+
   #footer-buttons {
     position: fixed; top: 0; left: 0; width: 100%;
     background: rgba(20,20,20,0.75);
@@ -577,6 +585,10 @@ button:hover {
 }
 
 @media (max-width: 360px) {
+    #divblocks, #divblocks2 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
   #divblocks,#divblocks2 {grid-template-columns: 1fr;}
   .blocks,.blocks2 {width: 130px; height: 130px;}
   #footer-buttons {gap: 10px;}
