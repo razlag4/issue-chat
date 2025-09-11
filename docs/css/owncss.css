@@ -432,23 +432,16 @@ button:hover {
 
 /* Планшеты и меньше — до 1024px */
 /* Планшеты и меньше — до 1024px */
+/* Планшеты — до 1024px */
 @media (max-width: 1024px) {
-    #h1, #h2, #h3, #h4, #h5 {
-        font-size: 28px;
-    }
-
-    #p1, #p2, #p3 {
-        font-size: 18px;
-    }
-
-    /* Скрываем ноут и логотип */
-    #laptop, #ava {
+    /* скрываем тяжелые элементы */
+    #laptop, #ava, #logo {
         display: none !important;
     }
 
     #batterfly {
-        width: 60%;
-        margin: 20px auto;
+        width: 65%;
+        margin: 25px auto;
         display: block;
         position: relative;
     }
@@ -456,7 +449,8 @@ button:hover {
     #divblocks, #divblocks2 {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 35px;
+        margin-top: 40px;
     }
 
     .blocks, .blocks2 {
@@ -466,54 +460,66 @@ button:hover {
 
     #footer-buttons {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 20px;
         justify-content: center;
     }
 }
 
-/* Телефоны — до 480px */
-@media (max-width: 480px) {
-    #h1, #h2, #h3, #h4, #h5 {
-        font-size: 22px;
-    }
-
-    #p1, #p2, #p3 {
-        font-size: 14px;
-    }
-
+/* Смартфоны и небольшие планшеты — до 768px */
+@media (max-width: 768px) {
     #batterfly {
         width: 75%;
     }
 
     .blocks, .blocks2 {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 180px;
+    }
+
+    button {
+        width: 85%;
+        margin: 0.7em auto;
+        font-size: 15px;
+        padding: 0.6em 1em;
+    }
+}
+
+/* Телефоны — до 480px (например iPhone 14) */
+@media (max-width: 480px) {
+    #batterfly {
+        width: 85%;
+    }
+
+    /* ДВА БЛОКА В РЯД */
+    #divblocks, #divblocks2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .blocks, .blocks2 {
+        width: 150px;
+        height: 150px;
     }
 
     #footer-buttons {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
     button {
         width: 90%;
-        margin: 0.5em auto;
-        font-size: 16px;
+        font-size: 14px;
+        padding: 0.5em 0.8em;
     }
 }
 
 /* Очень маленькие телефоны — до 360px */
 @media (max-width: 360px) {
-    #h1, #h2, #h3, #h4, #h5 {
-        font-size: 18px;
-    }
-
-    #p1, #p2, #p3 {
-        font-size: 12px;
-    }
-
-    #batterfly {
-        width: 85%;
+    /* возвращаем блоки в одну колонку */
+    #divblocks, #divblocks2 {
+        grid-template-columns: 1fr;
     }
 
     .blocks, .blocks2 {
@@ -523,7 +529,7 @@ button:hover {
 
     button {
         width: 100%;
-        font-size: 14px;
-        padding: 0.3em 0.5em;
+        font-size: 13px;
+        padding: 0.4em 0.7em;
     }
 }
