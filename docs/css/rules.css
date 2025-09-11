@@ -326,7 +326,7 @@ p:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Скрываем логотип и кнопку на экранах до 1054px */
+
 @media (max-width: 1054px) {
   #logo,
   button {
@@ -334,7 +334,7 @@ p:hover {
   }
 }
 
-/* Для экранов до 1024px */
+
 @media (max-width: 1024px) {
     main { margin: 10% 4% 5% 4%; padding: 2.5rem; }
     #div1, #div2 { padding: 3rem 3.5rem; }
@@ -345,7 +345,7 @@ p:hover {
     #footer-buttons { gap: 45px; }
 }
 
-/* Для экранов до 768px */
+
 @media (max-width: 768px) {
     main { margin: 12% 3% 5% 3%; padding: 2.5rem; }
     #div1, #div2 { padding: 3rem; }
@@ -363,7 +363,7 @@ p:hover {
     }
 }
 
-/* Для экранов до 480px */
+
 @media (max-width: 480px) {
     main { margin: 14% 2% 5% 2%; padding: 2rem; }
     #div1, #div2 { padding: 2.5rem; }
@@ -376,7 +376,7 @@ p:hover {
     .blocks, .blocks2 { width: 230px; height: 230px; margin-bottom: 18%; }
 }
 
-/* Для экранов до 360px */
+
 @media (max-width: 360px) {
     main { margin: 16% 2% 5% 2%; padding: 1.8rem; }
     #div1, #div2 { padding: 2rem; }
