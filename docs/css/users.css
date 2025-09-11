@@ -218,9 +218,10 @@ body {
 
 #search-container {
   width: 100%;
+  max-width: 1200px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
 }
 
 #main-content::before {
@@ -235,6 +236,11 @@ body {
   z-index: 1;
 }
 
+
+#search-container .input {
+  width: 100%;
+  max-width: 100%;
+}
 
 
 #logo {

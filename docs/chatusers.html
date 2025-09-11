@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Users</title>
+
+  <!-- Стили -->
   <link rel="stylesheet" href="css/users.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +13,18 @@
 </head>
 <body>
 
+  <!-- Основной контент -->
+  <main id="main-content" data-aos="fade-down">
+    <!-- Поиск -->
+    <div id="search-container">
+      <input id="searchInput" class="input" placeholder="Введите ID или username..." type="text" />
+    </div>
+
+    <!-- Список пользователей -->
+    <div id="users"></div>
+  </main>
+
+  <!-- Футер -->
   <footer id="footer" data-aos="fade-down">
     <div id="footer-buttons" data-aos="fade-down">
       <a href="index.html" class="footer-btn">Описание группы</a>
@@ -33,16 +47,7 @@
     </a>
   </footer>
 
-  <main id="main-content" data-aos="fade-down">
-    <div id="users">
-      <!-- Поиск внутри блока -->
-      <div id="search-container">
-        <input id="searchInput" class="input" placeholder="Введите ID или username..." type="text" />
-      </div>
-      <!-- Список пользователей появится ниже через JS -->
-    </div>
-  </main>
-
+  <!-- Скрипты -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
