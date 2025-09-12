@@ -382,32 +382,30 @@ main {
 .event-btn {
   display: inline-block;
   padding: 18px 42px;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, #ffb600, #ff8c00, #ff5e00);
-  background-size: 200% 200%;
+  background: linear-gradient(90deg, #ffb600, #ff8c00);
   border: none;
   text-decoration: none;
   text-align: center;
   position: relative;
   overflow: hidden;
-  width: 260px;
-  border-radius: 50px; /* более необычная форма */
-  box-shadow: 0 6px 16px rgba(255, 100, 0, 0.4);
+  width: 280px;
   cursor: pointer;
 
-  /* плавное "дыхание" кнопки */
-  animation: buttonBreath 6s infinite ease-in-out;
+  clip-path: path("M 40 0 H 240 Q 280 30 240 60 H 40 Q 0 30 40 0 Z");
+
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 22px rgba(255, 120, 0, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 120, 0, 0.7);
 }
 
-/* внутреннее свечение */
+
 .event-btn::before {
   content: "";
   position: absolute;
