@@ -381,20 +381,25 @@ main {
 
 .event-btn {
   display: inline-block;
-  width: 120px;
-  height: 100px;
+  position: relative;
+  width: 280px;
+  padding: 18px 42px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
   background: linear-gradient(90deg, #ffb600, #ff8c00);
   border: none;
+  text-align: center;
   cursor: pointer;
-  clip-path: path("M50 0 Q60 10 50 20 Q40 30 50 40 Q60 50 50 60 Q40 70 50 80 H70 V20 Q60 10 70 0 Z");
-  box-shadow: 0 4px 10px rgba(255,140,0,0.4);
+  border-radius: 50px; /* капсульная форма */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.5), 0 3px 8px rgba(0,0,0,0.1);
 }
-
 
 .event-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 140, 0, 0.5), 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 22px rgba(255, 140, 0, 0.7), 0 5px 12px rgba(0,0,0,0.15);
 }
 
 .event-btn::before {
@@ -431,6 +436,7 @@ main {
   50% { box-shadow: 0 0 14px rgba(255, 140, 0, 0.6); }
   100% { box-shadow: 0 0 6px rgba(255, 200, 100, 0.4); }
 }
+
 
 
 
