@@ -381,23 +381,16 @@ main {
 
 .event-btn {
   display: inline-block;
-  position: relative;
-  width: 280px;
-  padding: 18px 42px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
+  width: 120px;
+  height: 100px;
   background: linear-gradient(90deg, #ffb600, #ff8c00);
   border: none;
-  text-align: center;
   cursor: pointer;
-  overflow: hidden;
+  clip-path: path("M50 0 Q60 10 50 20 Q40 30 50 40 Q60 50 50 60 Q40 70 50 80 H70 V20 Q60 10 70 0 Z");
+  box-shadow: 0 4px 10px rgba(255,140,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  clip-path: path("M 20 0 H 260 Q 280 20 260 60 H 20 Q 0 40 20 0 Z");
-
-  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.4), 0 4px 8px rgba(0,0,0,0.1);
 }
+
 
 .event-btn:hover {
   transform: translateY(-2px);
