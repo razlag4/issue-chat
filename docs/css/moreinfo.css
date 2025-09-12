@@ -379,7 +379,6 @@ main {
   background: linear-gradient(60deg, rgba(255,255,255,0.08), rgba(0,0,0,0.15));
 }
 
-/* Основная кнопка */
 .event-btn {
   display: inline-block;
   position: relative;
@@ -392,19 +391,19 @@ main {
   border: none;
   text-align: center;
   cursor: pointer;
-  overflow: visible; /* чтобы крылья были видны */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.5);
-  clip-path: path("M 40 0 H 240 Q 280 30 240 60 H 40 Q 0 30 40 0 Z");
+
+  clip-path: path("M 20 0 H 260 Q 280 20 260 60 H 20 Q 0 40 20 0 Z");
+
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.4), 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Hover основной кнопки */
 .event-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(255, 120, 0, 0.7);
+  box-shadow: 0 10px 20px rgba(255, 140, 0, 0.5), 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* Мягкая подсветка */
 .event-btn::before {
   content: "";
   position: absolute;
@@ -419,7 +418,6 @@ main {
   pointer-events: none;
 }
 
-/* Мягкая рамка */
 .event-btn::after {
   content: "";
   position: absolute;
@@ -430,46 +428,6 @@ main {
   pointer-events: none;
 }
 
-/* Крылья бабочки */
-.event-btn .wing-left,
-.event-btn .wing-right {
-  position: absolute;
-  top: 50%;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(90deg, #ffb600, #ff8c00);
-  border-radius: 50%;
-  transform: translateY(-50%) scale(0.8) rotate(0deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: -1; /* чтобы крылья были под кнопкой */
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
-}
-
-/* Положение левого и правого крыла */
-.event-btn .wing-left {
-  left: -40px;
-  border-radius: 50% 50% 0 50%; /* форма крыла */
-  transform: translateY(-50%) rotate(-20deg) scale(0.8);
-}
-
-.event-btn .wing-right {
-  right: -40px;
-  border-radius: 50% 50% 50% 0;
-  transform: translateY(-50%) rotate(20deg) scale(0.8);
-}
-
-/* Hover для крыльев */
-.event-btn:hover .wing-left {
-  transform: translateY(-50%) rotate(-25deg) scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.6);
-}
-
-.event-btn:hover .wing-right {
-  transform: translateY(-50%) rotate(25deg) scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.6);
-}
-
-/* Анимации */
 @keyframes softGlow {
   0%, 100% { transform: scale(1); opacity: 0.2; }
   50% { transform: scale(1.08); opacity: 0.35; }
@@ -480,7 +438,6 @@ main {
   50% { box-shadow: 0 0 14px rgba(255, 140, 0, 0.6); }
   100% { box-shadow: 0 0 6px rgba(255, 200, 100, 0.4); }
 }
-
 
 
 
