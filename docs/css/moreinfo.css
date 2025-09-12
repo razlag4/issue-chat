@@ -385,24 +385,22 @@ main {
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(90deg, #ffb600, #ff8c00);
   border: none;
   text-decoration: none;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
-  width: 75%;
-  max-width: 500px;
-
-  /* форма кнопки — нестандартная */
-  clip-path: polygon(10% 0%, 90% 0%, 100% 25%, 100% 75%, 90% 100%, 10% 100%, 0% 75%, 0% 25%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 250px;
+  border-radius: 40px; /* плавная форма */
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
+  cursor: pointer;
 }
 
 .event-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 0 28px rgba(0, 200, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 140, 0, 0.6);
 }
 
 .event-btn::before {
@@ -412,22 +410,33 @@ main {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 200, 255, 0.2) 0%,
-    transparent 70%
-  );
-  animation: softGlow 10s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
   opacity: 0.3;
+  border-radius: 50%;
+  animation: softGlow 6s infinite ease-in-out; /* легкая "пульсация" */
+}
+
+.event-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  border: 2px solid rgba(255,255,255,0.15);
+  animation: borderPulse 4s infinite ease-in-out; /* слабое дыхание обводки */
 }
 
 @keyframes softGlow {
-  0% { transform: scale(1) rotate(0deg); opacity: 0.2; }
-  25% { transform: scale(1.2) rotate(30deg); opacity: 0.35; }
-  50% { transform: scale(1.4) rotate(60deg); opacity: 0.5; }
-  75% { transform: scale(1.2) rotate(30deg); opacity: 0.35; }
-  100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+  0% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.05); opacity: 0.35; }
+  100% { transform: scale(1); opacity: 0.2; }
 }
+
+@keyframes borderPulse {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.15; }
+}
+
 
 .event-timer {
   font-size: 0.9rem;
