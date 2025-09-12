@@ -381,28 +381,33 @@ main {
 
 .event-btn {
   display: inline-block;
-  padding: 18px 38px;
-  font-size: 1.1rem;
+  padding: 18px 42px;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(90deg, #ffb600, #ff8c00);
+  background: linear-gradient(135deg, #ffb600, #ff8c00, #ff5e00);
+  background-size: 200% 200%;
   border: none;
   text-decoration: none;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 250px;
-  border-radius: 40px; /* плавная форма */
-  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
+  width: 260px;
+  border-radius: 50px; /* более необычная форма */
+  box-shadow: 0 6px 16px rgba(255, 100, 0, 0.4);
   cursor: pointer;
+
+  /* плавное "дыхание" кнопки */
+  animation: buttonBreath 6s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(255, 140, 0, 0.6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(255, 120, 0, 0.6);
 }
 
+/* внутреннее свечение */
 .event-btn::before {
   content: "";
   position: absolute;
@@ -410,32 +415,39 @@ main {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
   opacity: 0.3;
   border-radius: 50%;
-  animation: softGlow 6s infinite ease-in-out; /* легкая "пульсация" */
+  animation: softGlow 8s infinite ease-in-out;
 }
 
+/* мягкая "обводка" вокруг */
 .event-btn::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 40px;
-  border: 2px solid rgba(255,255,255,0.15);
-  animation: borderPulse 4s infinite ease-in-out; /* слабое дыхание обводки */
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: borderShine 5s infinite linear;
+}
+
+/* анимации */
+@keyframes buttonBreath {
+  0%, 100% { transform: scale(1); background-position: 0% 50%; }
+  50% { transform: scale(1.03); background-position: 100% 50%; }
 }
 
 @keyframes softGlow {
-  0% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.05); opacity: 0.35; }
-  100% { transform: scale(1); opacity: 0.2; }
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.08); opacity: 0.35; }
 }
 
-@keyframes borderPulse {
-  0% { opacity: 0.15; }
-  50% { opacity: 0.3; }
-  100% { opacity: 0.15; }
+@keyframes borderShine {
+  0% { box-shadow: 0 0 6px rgba(255, 200, 100, 0.4); }
+  50% { box-shadow: 0 0 14px rgba(255, 140, 0, 0.6); }
+  100% { box-shadow: 0 0 6px rgba(255, 200, 100, 0.4); }
 }
+
 
 
 .event-timer {
