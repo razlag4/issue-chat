@@ -18,7 +18,7 @@ function removeEventFromServer(name) {
 
 function updateTimers(eventElements) {
   const now = new Date();
-  eventElements.forEach(({ container, timer, endTime, name }) => {
+  eventElements.forEach(({ container, timer, endTime, button, wingLeft, wingRight, name }) => {
     const diff = endTime - now;
     if (diff <= 0) {
       container.remove();
@@ -48,13 +48,20 @@ function createEventButton(event) {
   button.textContent = event.name;
   button.classList.add('event-btn');
 
+  const wingLeft = document.createElement('span');
+  wingLeft.classList.add('wing-left');
+  const wingRight = document.createElement('span');
+  wingRight.classList.add('wing-right');
+  button.appendChild(wingLeft);
+  button.appendChild(wingRight);
+
   const timer = document.createElement('div');
   timer.classList.add('event-timer');
 
   container.appendChild(button);
   container.appendChild(timer);
 
-  return { container, timer, endTime: new Date(event.end_time), name: event.name };
+  return { container, timer, button, wingLeft, wingRight, endTime: new Date(event.end_time), name: event.name };
 }
 
 async function renderEvents() {
