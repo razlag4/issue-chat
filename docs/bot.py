@@ -153,10 +153,18 @@ VOTES_FILE = os.path.join(BASE_DIR, "votes.json")
 
 
 def load_votes():
+    if not os.path.exists(VOTES_FILE):
+        with open(VOTES_FILE, "w", encoding="utf-8") as f:
+            json.dump({}, f, ensure_ascii=False, indent=2)
+        return {}
+
     try:
         with open(VOTES_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
+            data = f.read().strip()
+            if not data:
+                return {}
+            return json.loads(data)
+    except json.JSONDecodeError:
         return {}
 
 def save_votes(votes):
