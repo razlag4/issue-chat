@@ -501,8 +501,10 @@ async def stats_command(event):
             site_name = "Неизвестно"
         stats += f"ID {user_id} ({site_name}):\n"
         answers = data.get("answers", [])
-        for i, answer in enumerate(answers):
-            stats += f"  {NOMINATIONS[i]} {answer}\n"
+        for answer in answers:
+            nomination = answer.get("nomination", "Неизвестная номинация")
+            votes_list = ", ".join(answer.get("votes", [])) or "Нет голосов"
+            stats += f"  {nomination}:\n    {votes_list}\n"
         stats += f"Время голосования: {data.get('time', 'неизвестно')}\n\n"
 
     await event.reply(stats)
