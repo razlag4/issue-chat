@@ -465,13 +465,6 @@ async def submit_handler(event):
     await client.send_message(YOUR_TELEGRAM_ID, text)
     await event.respond("✅ Спасибо, твой голос учтён!")
 
- 
-    buttons = [Button.text("Стереть голоса", single_use=True)]
-    await event.respond(
-        "❌ Если хочешь проголосовать заново, можешь стереть все свои голоса:",
-        buttons=buttons
-    )
-
 
 async def send_stats():
     while True:
@@ -521,6 +514,30 @@ async def stats_command(event):
         stats += f"Время голосования: {data.get('time', 'неизвестно')}\n\n"
 
     await event.reply(stats)
+    
+    # --- после stats_command ---
+@client.on(events.NewMessage(pattern=r'^/votes$'))
+async def show_votes(event):
+    user_id = str(event.sender_id)
+    votes = load_votes()
+
+    if user_id not in votes:
+        await event.respond("ℹ️ У тебя ещё нет сохранённых голосов.")
+        return
+
+    user_data = votes[user_id]
+    answers = user_data.get("answers", [])
+    timestamp = user_data.get("time", "неизвестно")
+
+    text = f"📊 Твои текущие голоса (отправлено: {timestamp}):\n\n"
+    for answer in answers:
+        nomination = answer.get("nomination", "Неизвестная номинация")
+        votes_list = ", ".join(answer.get("votes", [])) or "Нет голосов"
+        text += f"{nomination}:\n  {votes_list}\n\n"
+
+    await event.respond(text)
+# --- конец нового блока ---
+
 
 
 @client.on(events.NewMessage(pattern=r'^Стереть голоса$'))
