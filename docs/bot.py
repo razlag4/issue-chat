@@ -170,6 +170,15 @@ def load_votes():
 def save_votes(votes):
     with open(VOTES_FILE, "w", encoding="utf-8") as f:
         json.dump(votes, f, ensure_ascii=False, indent=2)
+        
+async def clear_votes(user_id):
+    votes = load_votes()
+    if user_id in votes:
+        del votes[user_id]
+        save_votes(votes)
+        return True
+    return False
+        
 
 
 NOMINATION_NAMES = [
@@ -441,7 +450,6 @@ async def submit_handler(event):
     votes[user_id] = {"answers": state["answers"], "time": timestamp}
     save_votes(votes)
 
-    
     site_name = await get_first_name(event.sender_id)
     if not site_name:
         sender = await event.get_sender()
@@ -454,10 +462,15 @@ async def submit_handler(event):
         text += f"{nomination}: {votes_list}\n"
     text += f"\nВремя: {timestamp}"
 
-    
     await client.send_message(YOUR_TELEGRAM_ID, text)
-    
     await event.respond("✅ Спасибо, твой голос учтён!")
+
+ 
+    buttons = [Button.text("Стереть голоса", single_use=True)]
+    await event.respond(
+        "❌ Если хочешь проголосовать заново, можешь стереть все свои голоса:",
+        buttons=buttons
+    )
 
 
 async def send_stats():
@@ -508,6 +521,39 @@ async def stats_command(event):
         stats += f"Время голосования: {data.get('time', 'неизвестно')}\n\n"
 
     await event.reply(stats)
+
+
+@client.on(events.NewMessage(pattern=r'^Стереть голоса$'))
+async def clear_handler(event):
+    if not event.is_private:
+        return
+    user_id = str(event.sender_id)
+    votes = load_votes()
+
+    if user_id not in votes:
+        await event.respond("ℹ️ У тебя ещё нет голосов, нечего удалять.")
+        return
+
+    buttons = [
+        [Button.text("✅ Да, удалить"), Button.text("❌ Нет, оставить")]
+    ]
+    await event.respond("Вы действительно хотите удалить все свои голоса?", buttons=buttons)
+
+
+@client.on(events.NewMessage(pattern=r'^✅ Да, удалить$'))
+async def confirm_clear(event):
+    user_id = str(event.sender_id)
+    if await clear_votes(user_id):
+        await event.respond("🗑 Все твои голоса успешно удалены. Можешь снова нажать /start и проголосовать заново.")
+    else:
+        await event.respond("⚠️ У тебя не было голосов для удаления.")
+
+
+@client.on(events.NewMessage(pattern=r'^❌ Нет, оставить$'))
+async def cancel_clear(event):
+    await event.respond("✅ Хорошо, твои голоса остались без изменений.")
+
+
 
 
 async def start_bot():
