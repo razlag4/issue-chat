@@ -538,6 +538,25 @@ async def show_votes(event):
     await event.respond(text)
 # --- конец нового блока ---
 
+@client.on(events.NewMessage(pattern=r'^/clear$'))
+async def clear_votes_command(event):
+    if not event.is_private:
+        return
+    user_id = str(event.sender_id)
+    votes = load_votes()
+
+    if user_id not in votes:
+        await event.respond("ℹ️ У тебя ещё нет голосов для удаления.")
+        return
+
+    buttons = [
+        [Button.text("✅ Да, удалить"), Button.text("❌ Нет, оставить")]
+    ]
+    await event.respond("Вы действительно хотите удалить все свои голоса?", buttons=buttons)
+
+
+
+
 
 
 @client.on(events.NewMessage(pattern=r'^Стереть голоса$'))
